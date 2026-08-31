@@ -1,0 +1,12 @@
+<svg width="1000" height="500" xmlns="http://www.w3.org/2000/svg">
+<rect width="1000" height="500" fill="#0F1420"/>
+<text x="20" y="30" fill="#00D9FF" font-family="monospace" font-size="14">KV-14 Architecture: 42 Layers • GQA • SwiGLU • FlashAttn-2 • RoPE 128K</text>
+<rect x="50" y="70" width="180" height="60" rx="12" fill="#00D9FF" opacity="0.9"/><text x="140" y="105" text-anchor="middle" fill="#000" font-family="monospace" font-weight="700">Repo Graph</text>
+<rect x="300" y="70" width="120" height="60" rx="12" fill="#7C3AED"/><text x="360" y="105" text-anchor="middle" fill="#fff" font-family="monospace">Planner</text>
+<rect x="440" y="70" width="120" height="60" rx="12" fill="#7C3AED"/><text x="500" y="105" text-anchor="middle" fill="#fff" font-family="monospace">Coder</text>
+<rect x="580" y="70" width="120" height="60" rx="12" fill="#00FF88"/><text x="640" y="105" text-anchor="middle" fill="#000" font-family="monospace">Tester</text>
+<rect x="720" y="70" width="120" height="60" rx="12" fill="#FFD21E"/><text x="780" y="105" text-anchor="middle" fill="#000" font-family="monospace">Reviewer</text>
+<rect x="860" y="70" width="120" height="60" rx="12" fill="#FF4D6D"/><text x="920" y="105" text-anchor="middle" fill="#fff" font-family="monospace">Security</text>
+<line x1="230" y1="100" x2="300" y2="100" stroke="#fff" stroke-width="2"/>
+<text x="500" y="200" fill="#9AA3B2" font-family="monospace" font-size="12" text-anchor="middle">Shared Swarm Memory • Consensus Voting • 1.4T Tokens</text>
+</svg>

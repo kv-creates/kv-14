@@ -25,6 +25,19 @@ class SwarmRequest(BaseModel):
     repo: Dict[str, str]  # path -> code
     goal: str = "auto-fix and review"
 
+class SecurityRequest(BaseModel):
+    code: str
+    language: str = "python"
+
+class TestGenRequest(BaseModel):
+    code: str
+    language: str = "python"
+
+class ModernizeRequest(BaseModel):
+    code: str = ""
+    source: str = "python2"
+    target: str = "python3"
+
 @app.get("/health")
 def health():
     return {"status": "ok", "model": "KV-14", "version": "14.0.0", "swarm": "online", "params": "14.2B"}
@@ -32,7 +45,6 @@ def health():
 @app.post("/v1/analyze")
 def analyze(req: AnalyzeRequest):
     start = time.time()
-    # Placeholder logic - in production delegates to KV14Engine
     risk = 92 if "x/0" in req.code or "/0" in req.code else 18
     bugs = []
     if risk > 75:
@@ -73,8 +85,8 @@ def review(req: AnalyzeRequest):
     }
 
 @app.post("/v1/modernize")
-def modernize(code: str = "", source: str = "python2", target: str = "python3"):
-    return {"source": source, "target": target, "code": f"# Modernized by KV-14 Swarm\n{code[:200]}", "behavior_preserved": 0.97}
+def modernize(req: ModernizeRequest):
+    return {"source": req.source, "target": req.target, "code": f"# Modernized by KV-14 Swarm\n{req.code[:200]}", "behavior_preserved": 0.97}
 
 @app.post("/v1/swarm")
 def swarm(req: SwarmRequest):
@@ -87,11 +99,11 @@ def swarm(req: SwarmRequest):
     }
 
 @app.post("/v1/test-gen")
-def test_gen(code: str, language: str = "python"):
-    return {"tests": f"def test_generated():\n    assert True  # generated for {language} code", "coverage": 0.89}
+def test_gen(req: TestGenRequest):
+    return {"tests": f"def test_generated():\n    assert True  # generated for {req.language} code", "coverage": 0.89}
 
 @app.post("/v1/security")
-def security(code: str, language: str = "python"):
+def security(req: SecurityRequest):
     return {"owasp": [], "cwe": [], "exploitability": 0.1, "sarif": "sarif placeholder"}
 
 @app.get("/")

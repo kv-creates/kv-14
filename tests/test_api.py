@@ -38,7 +38,14 @@ def test_swarm():
 def test_security():
     r = client.post("/v1/security", json={"code": "eval(user_input)", "language": "python"})
     assert r.status_code == 200
+    assert "owasp" in r.json()
 
 def test_modernize():
-    r = client.post("/v1/modernize?code=print+hello&source=python2&target=python3")
+    r = client.post("/v1/modernize", json={"code": "print hello", "source": "python2", "target": "python3"})
     assert r.status_code == 200
+    assert r.json()["behavior_preserved"] == 0.97
+
+def test_test_gen():
+    r = client.post("/v1/test-gen", json={"code": "def add(a,b): return a+b", "language": "python"})
+    assert r.status_code == 200
+    assert "tests" in r.json()

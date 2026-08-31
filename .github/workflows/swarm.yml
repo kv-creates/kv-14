@@ -1,0 +1,11 @@
+name: Swarm Review
+on: [pull_request]
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          pip install httpx
+          python cli/kv14cli.py analyze --help
+          echo "KV-14 swarm would review this PR here"

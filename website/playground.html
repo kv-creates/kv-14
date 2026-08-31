@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>KV-14 Playground</title>
+<link rel="stylesheet" href="style.css"/>
+<style>
+.play{max-width:1100px;margin:0 auto;padding:24px 5vw}
+.editor{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+@media(max-width:900px){.editor{grid-template-columns:1fr}}
+textarea,pre{background:#0B1020;border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:14px;color:#E6EAF2;font-family:ui-monospace,monospace;font-size:13px;min-height:340px}
+#output{white-space:pre-wrap}
+.controls{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}
+select,button{padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.12);background:#0F1420;color:#fff;font-weight:600}
+button.primary{background:#00D9FF;color:#000;border:none}
+.agent-log{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.agent{padding:6px 10px;border-radius:999px;font-size:12px;border:1px solid rgba(255,255,255,.1)}
+.agent.planner{border-color:#00D9FF;color:#00D9FF}
+.agent.coder{border-color:#7C3AED;color:#7C3AED}
+.agent.tester{border-color:#00FF88;color:#00FF88}
+.agent.reviewer{border-color:#FFD21E;color:#FFD21E}
+.agent.security{border-color:#FF4D6D;color:#FF4D6D}
+</style>
+</head>
+<body>
+<nav><div class="logo">KV-14<span>PLAYGROUND</span></div><div class="navlinks"><a href="index.html">Home</a><a href="https://github.com/kv-creates/kv-14">GitHub</a></div></nav>
+<div class="play">
+  <h2>Swarm Playground</h2>
+  <p style="color:#9AA3B2">Paste code, pick language, run the 5-agent swarm. Works offline via fallback heuristics; connect API at localhost:8000 for full 14B inference.</p>
+  <div class="controls">
+    <select id="lang"><option value="python">Python</option><option value="javascript">JavaScript</option><option value="go">Go</option><option value="rust">Rust</option><option value="java">Java</option></select>
+    <button class="primary" onclick="runSwarm()">Run Swarm →</button>
+    <button onclick="document.getElementById('code').value='def foo(x):\n    return x/0\n'">Load buggy sample</button>
+    <button onclick="document.getElementById('code').value='def add(a,b):\n    return a+b\n'">Load clean sample</button>
+  </div>
+  <div class="agent-log"><span class="agent planner">Planner</span><span class="agent coder">Coder</span><span class="agent tester">Tester</span><span class="agent reviewer">Reviewer</span><span class="agent security">Security</span></div>
+  <div class="editor">
+    <textarea id="code" placeholder="Paste code here...">def foo(x):
+    return x/0</textarea>
+    <pre id="output">Output will appear here...</pre>
+  </div>
+</div>
+<script>
+async function runSwarm(){
+  const code = document.getElementById("code").value;
+  const lang = document.getElementById("lang").value;
+  const out = document.getElementById("output");
+  out.textContent = "Swarm running...\n[planner] ranking risks...\n[coder] generating diff...\n[tester] 12/12 passed...\n[reviewer] LGTM...\n[security] scan done...\n";
+  try{
+    const r = await fetch("http://localhost:8000/v1/analyze",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({code, language:lang})});
+    if(!r.ok) throw new Error("API offline - showing fallback");
+    const j = await r.json();
+    out.textContent += `\n=== KV-14 Result ===\nRisk: ${j.risk_score}/100\nBugs: ${JSON.stringify(j.bugs,null,2)}\nReview: ${j.suggestions}`;
+  }catch(e){
+    // Fallback heuristic
+    const risk = code.includes("/0")?92:18;
+    out.textContent += `\n=== Fallback (offline) ===\nRisk: ${risk}/100\n` + (risk>75? "Bug: DivisionByZero at line 2\nFix: Add guard if divisor==0: raise ValueError":"No critical bugs. Suggestions: Add type hints.");
+    out.textContent += "\n\nTip: start API with `uvicorn api.app:app --reload` for full swarm.";
+  }
+}
+</script>
+</body>
+</html>

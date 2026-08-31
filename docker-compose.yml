@@ -1,0 +1,15 @@
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - KV14_VARIANT=kv14-14b-instruct-q4
+    volumes:
+      - ./checkpoints:/app/checkpoints
+  web:
+    image: nginx:alpine
+    ports:
+      - "3000:80"
+    volumes:
+      - ./website:/usr/share/nginx/html:ro

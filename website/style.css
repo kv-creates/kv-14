@@ -1,0 +1,27 @@
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#070A12;--card:#0F1420;--accent:#00D9FF;--accent2:#7C3AED;--ok:#00FF88}
+body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:#E6EAF2;line-height:1.6}
+.bg{position:fixed;inset:0;background:radial-gradient(600px 600px at 20% 10%, rgba(124,58,237,.15), transparent), radial-gradient(800px 800px at 80% 90%, rgba(0,217,255,.12), transparent);z-index:-1}
+nav{display:flex;justify-content:space-between;align-items:center;padding:18px 5vw;border-bottom:1px solid rgba(255,255,255,.06);backdrop-filter:blur(8px)}
+.logo{font-weight:900;letter-spacing:.12em;color:#fff}.logo span{color:var(--accent);margin-left:6px;font-weight:400}
+.navlinks{display:flex;gap:22px;align-items:center}
+.navlinks a{color:#9AA3B2;text-decoration:none;font-size:14px}
+.cta{background:var(--accent);color:#000!important;padding:8px 14px;border-radius:10px;font-weight:700}
+.hero{text-align:center;padding:72px 5vw 36px}
+.badge{display:inline-block;border:1px solid rgba(0,217,255,.3);color:var(--accent);padding:6px 12px;border-radius:999px;font-size:12px;letter-spacing:.08em}
+.hero h1{font-size:64px;line-height:.9;margin:18px 0;font-weight:900}.hero h1 span{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{max-width:720px;margin:0 auto 22px;color:#9AA3B2}
+.hero-cta{display:flex;gap:12px;justify-content:center;margin:18px 0}
+.btn{padding:12px 18px;border-radius:12px;text-decoration:none;font-weight:700;font-size:14px}
+.btn.primary{background:var(--accent);color:#000}.btn.ghost{border:1px solid rgba(255,255,255,.12);color:#fff}
+.stats{display:flex;gap:18px;justify-content:center;margin-top:28px;flex-wrap:wrap}
+.stats div{background:var(--card);border:1px solid rgba(255,255,255,.06);padding:14px 18px;border-radius:14px;min-width:140px;text-align:center}
+.stats b{display:block;font-size:18px;color:#fff}.stats span{font-size:12px;color:#9AA3B2}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;padding:36px 5vw}
+.card{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:18px}
+.card h3{color:#fff;margin-bottom:6px}
+.card p{color:#9AA3B2;font-size:14px}
+.demo{padding:36px 5vw;text-align:center}
+.demo pre{text-align:left;max-width:720px;margin:14px auto;background:#0B1020;border:1px solid rgba(255,255,255,.06);padding:16px;border-radius:12px;overflow:auto}
+footer{text-align:center;padding:24px;color:#9AA3B2;font-size:13px;border-top:1px solid rgba(255,255,255,.06);margin-top:36px}
+footer a{color:var(--accent);text-decoration:none}

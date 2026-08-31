@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>KV-14 — Agentic Swarm Code Intelligence</title>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<div class="bg"></div>
+<nav>
+  <div class="logo">KV-14<span>SWARM</span></div>
+  <div class="navlinks"><a href="#features">Features</a><a href="playground.html">Playground</a><a href="https://github.com/kv-creates/kv-14">GitHub</a><a class="cta" href="playground.html">Try Demo</a></div>
+</nav>
+<section class="hero">
+  <div class="badge">14.2B • 5 Agents • 128K Context • Open Source • MIT</div>
+  <h1>The Swarm<br/><span>That Fixes Code</span></h1>
+  <p>KV-13 was a single model. <b>KV-14 is a 5-agent swarm</b> — Planner, Coder, Tester, Reviewer, Security Auditor — collaborating via shared repo graph to predict, fix, test and secure entire codebases.</p>
+  <div class="hero-cta"><a class="btn primary" href="playground.html">Open Playground →</a><a class="btn ghost" href="https://github.com/kv-creates/kv-14">View on GitHub</a></div>
+  <div class="stats"><div><b>95.2% F1</b><span>Defects4J</span></div><div><b>85.1%</b><span>HumanEvalFix</span></div><div><b>92.0% F1</b><span>CVEFixes</span></div><div><b>0.7s</b><span>Latency 1K</span></div></div>
+</section>
+<section id="features" class="grid">
+  <div class="card"><h3>Planner Agent</h3><p>Ranks risks across 128K repo graph and creates fix plan.</p></div>
+  <div class="card"><h3>Coder Agent</h3><p>Generates minimal git-ready diffs with behavior preservation.</p></div>
+  <div class="card"><h3>Tester Agent</h3><p>Auto-generates tests and loops until 12/12 pass.</p></div>
+  <div class="card"><h3>Reviewer Agent</h3><p>Repo-aware review with consensus voting.</p></div>
+  <div class="card"><h3>Security Auditor</h3><p>OWASP + CWE with exploitability and SARIF.</p></div>
+  <div class="card"><h3>Swarm Memory</h3><p>Shared memory so agents build on each other's reasoning.</p></div>
+</section>
+<section class="demo">
+  <h2>One Command, Full Swarm</h2>
+  <pre><code>from api.client import KV14Client
+client = KV14Client()
+result = client.swarm({"app.py": open("app.py").read()}, goal="fix and review")
+print(result["diff"])  # git apply ready
+print(result["consensus"])  # approve</code></pre>
+</section>
+<footer>© 2026 kv-creates • MIT • <a href="https://huggingface.co/kv-creates/KV-14">HuggingFace</a> • <a href="https://kv-14.netlify.app">Netlify Demo</a></footer>
+<script src="app.js"></script>
+</body>
+</html>

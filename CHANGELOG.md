@@ -7,3 +7,5 @@
 - Streaming inference engine
 - FastAPI with 8 endpoints
 - Website with playground
+## [14.1.0] - Minimalist polish
+- Minimalist UI tokens, a11y, error envelope

@@ -31,3 +31,4 @@ Repo Graph (128K) --> Planner --> Coder --> Tester --> Reviewer --> Security -->
 | Context | 32K | 128K |
 
 See `model/kv14.py` and `model/swarm/orchestrator.py`.
+> Minimalist: Planner Coder Tester Reviewer Security share repo-graph memory.

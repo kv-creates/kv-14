@@ -112,3 +112,7 @@ def root():
 @app.get("/version")
 def version():
     return {"name":"KV-14","version":"14.0.0"}
+@app.exception_handler(Exception)
+async def _err(request, exc):
+    from fastapi.responses import JSONResponse
+    return JSONResponse({"error":"internal_error","detail":str(exc)[:200]}, status_code=500)

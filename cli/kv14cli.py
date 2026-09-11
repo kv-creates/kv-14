@@ -51,3 +51,5 @@ def health(base_url: str = "http://localhost:8000"):
 
 if __name__ == "__main__":
     app()
+# minimalist: typer --help polish
+HELP_EXAMPLE="kv14 analyze --file app.py"

@@ -109,3 +109,6 @@ def security(req: SecurityRequest):
 @app.get("/")
 def root():
     return {"message": "KV-14 Swarm API - see /docs", "docs": "/docs", "health": "/health"}
+@app.get("/version")
+def version():
+    return {"name":"KV-14","version":"14.0.0"}

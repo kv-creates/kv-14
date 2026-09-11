@@ -13,3 +13,4 @@ services:
       - "3000:80"
     volumes:
       - ./website:/usr/share/nginx/html:ro
+# healthcheck: curl -f http://api:8000/health

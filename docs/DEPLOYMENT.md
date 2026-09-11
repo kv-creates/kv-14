@@ -23,3 +23,7 @@ pip install -r requirements.txt
 uvicorn api.app:app --reload
 pytest
 ```
+## Minimal deploy
+1. `pip install -r requirements.txt`
+2. `uvicorn api.app:app`
+3. Open `/docs`

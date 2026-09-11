@@ -21,3 +21,7 @@ curl -X POST http://localhost:8000/v1/analyze \
  -H "Content-Type: application/json" \
  -d "{\"code\":\"def foo(x): return x/0\", \"language\":\"python\"}"
 ```
+| Method | Path | Use |
+|---|---|---|
+| GET | /health | probe |
+| GET | /version | version |

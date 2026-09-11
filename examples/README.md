@@ -22,3 +22,7 @@ kv14 analyze examples/vulnerable.py
 kv14 fix examples/vulnerable.py --apply
 kv14 swarm . --goal "modernize to python3"
 ```
+| File | Purpose |
+|---|---|
+| clean.py | good |
+| vulnerable.py | bad |

@@ -116,3 +116,9 @@ def version():
 async def _err(request, exc):
     from fastapi.responses import JSONResponse
     return JSONResponse({"error":"internal_error","detail":str(exc)[:200]}, status_code=500)
+@app.middleware("http")
+async def _rid(request, call_next):
+    import uuid
+    r=await call_next(request)
+    r.headers["X-Request-ID"]=str(uuid.uuid4())[:8]
+    return r

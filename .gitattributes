@@ -1,0 +1,4 @@
+* text=auto eol=lf
+*.py text diff=python
+*.ipynb text eol=lf
+assets/*.svg text eol=lf

@@ -6,3 +6,5 @@ We love contributions! See pipeline:
 2. `pip install -e ".[dev]"`
 3. `pytest`
 4. Open PR - KV-14 swarm will auto-review it
+## Minimalist quickstart
+`pip install -r requirements.txt && pytest -q`

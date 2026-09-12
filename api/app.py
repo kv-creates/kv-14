@@ -130,3 +130,4 @@ def batch(req: BatchRequest):
 @app.get("/metrics")
 def metrics():
     return {"requests": 1240, "p95_ms": 180, "swarm_success": 0.97}
+# tags: health, analyze, swarm for clean /docs grouping

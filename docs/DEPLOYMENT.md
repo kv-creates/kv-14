@@ -27,3 +27,7 @@ pytest
 1. `pip install -r requirements.txt`
 2. `uvicorn api.app:app`
 3. Open `/docs`
+| Var | Default |
+|---|---|
+| KV14_MODEL | kv-creates/KV-14 |
+| PORT | 8000 |

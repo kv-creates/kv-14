@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/kv-creates/kv-14"><img src="https://img.shields.io/badge/version-14.0.0-00D9FF?style=for-the-badge&labelColor=0A0E1A" alt="Version"></a>
+  <a href="https://github.com/kv-creates/kv-14"><img src="https://img.shields.io/badge/version-14.2.0-00D9FF?style=for-the-badge&labelColor=0A0E1A" alt="Version"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-7C3AED?style=for-the-badge&labelColor=0A0E1A" alt="License"></a>
   <a href="https://kv-14.netlify.app"><img src="https://img.shields.io/badge/LIVE_DEMO-ONLINE-00FF88?style=for-the-badge&labelColor=0A0E1A" alt="Live Demo"></a>
   

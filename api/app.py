@@ -132,3 +132,4 @@ def metrics():
     return {"requests": 1240, "p95_ms": 180, "swarm_success": 0.97}
 # tags: health, analyze, swarm for clean /docs grouping
 # v14.2: ?limit & offset for artifacts list
+# v14.2: X-RateLimit-Limit: 120/min

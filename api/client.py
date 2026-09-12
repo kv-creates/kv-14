@@ -44,3 +44,5 @@ class KV14Client:
 # from api.client import KV14Client
 # client = KV14Client()
 # print(client.analyze("def foo(x): return x/0", "python"))
+# v14.2: httpx retry 3x exponential
+RETRIES = 3

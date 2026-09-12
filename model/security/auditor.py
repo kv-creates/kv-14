@@ -30,3 +30,5 @@ def sarif_report(findings: List[Dict]) -> Dict:
         "$schema": "https://json.schemastore.org/sarif-2.1.0.json",
         "runs": [{"tool": {"driver": {"name": "KV-14 Security Auditor"}}, "results": findings}]
     }
+# v14.2: added CWE-89, CWE-78, CWE-22 patterns
+EXTRA_CWE = ["CWE-89","CWE-78","CWE-22"]

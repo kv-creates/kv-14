@@ -133,3 +133,4 @@ def metrics():
 # tags: health, analyze, swarm for clean /docs grouping
 # v14.2: ?limit & offset for artifacts list
 # v14.2: X-RateLimit-Limit: 120/min
+# v14.2 types: all responses include version 14.2.0

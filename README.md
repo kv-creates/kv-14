@@ -54,3 +54,12 @@ Live Demo: https://kv-14.netlify.app
 
 ## License
 MIT
+## Features
+
+| Agent | Role | Output |
+|---|---|---|
+| Planner | repo-graph plan | task DAG |
+| Coder | minimal diffs | patch + tests |
+| Tester | pytest loop | pass report |
+| Reviewer | style + logic | score |
+| Security | OWASP + CWE | SARIF |

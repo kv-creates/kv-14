@@ -13,3 +13,5 @@ def eval_all(checkpoint="checkpoints/kv14-final"):
 
 if __name__ == "__main__":
     eval_all()
+# v14.2: --split test/val
+EVAL_SPLIT = "test"

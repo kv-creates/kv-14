@@ -7,3 +7,5 @@ class PlannerAgent:
     def plan(self, goal: str) -> str:
         files = list(self.memory.repo.keys())
         return f"Plan for goal={goal}: 1) Analyze {len(files)} files 2) Rank risks 3) Fix top 3 bugs 4) Generate tests 5) Review."
+# v14.2: max_depth param for repo-graph traversal
+MAX_DEPTH = 4

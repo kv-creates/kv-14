@@ -31,6 +31,9 @@
 
 ## Why KV-14
 
+<a id="why-kv-14"></a>
+
+
 | Capability | KV-13 | KV-14 Swarm |
 |---|---|---|
 | Bug Prediction | Single pass | Planner + Coder cross-validate |

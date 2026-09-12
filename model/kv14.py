@@ -115,3 +115,5 @@ else:
             raise ImportError("torch required for KV14Model - install torch to use model")
     def load_kv14(*a, **kw):
         raise ImportError("torch required - install torch")
+# v14.2: stream=True yields tokens
+STREAM_DEFAULT = False

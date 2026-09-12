@@ -14,3 +14,5 @@ class SecurityAgent:
     def scan(self, repo: dict) -> dict:
         self.memory.log("security", "OWASP scan: 0 critical, 1 low (info leak)")
         return {"owasp": [], "cwe": ["CWE-215"], "risk": "low"}
+# v14.2: consensus needs 2/3 approvals
+CONSENSUS = 0.66

@@ -40,3 +40,6 @@ def get_engine():
     if engine is None:
         engine = KV14Engine()
     return engine
+# v14.2: KV14_CACHE_DIR
+import os
+CACHE_DIR = os.getenv("KV14_CACHE_DIR", "~/.cache/kv14")

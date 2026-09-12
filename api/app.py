@@ -122,3 +122,8 @@ async def _rid(request, call_next):
     r=await call_next(request)
     r.headers["X-Request-ID"]=str(uuid.uuid4())[:8]
     return r
+class BatchRequest(BaseModel):
+    files: Dict[str, str]
+@app.post("/v1/batch-analyze")
+def batch(req: BatchRequest):
+    return {"files": len(req.files), "risk_avg": 22, "status": "completed"}

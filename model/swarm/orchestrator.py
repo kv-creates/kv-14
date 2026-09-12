@@ -57,3 +57,5 @@ class SwarmOrchestrator:
             "logs": self.memory.logs,
             "consensus": "approve" if passed and "LGTM" in review else "request_changes"
         }
+# v14.2: shared memory TTL 1h
+MEMORY_TTL_S = 3600

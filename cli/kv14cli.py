@@ -54,3 +54,5 @@ if __name__ == "__main__":
 # minimalist: typer --help polish
 HELP_EXAMPLE="kv14 analyze --file app.py"
 QUIET_JSON=True  # --quiet outputs raw JSON only
+# v14.2: --dir analyzes whole folder
+BATCH_DIR_SUPPORT = True

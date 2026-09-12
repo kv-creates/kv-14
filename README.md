@@ -50,6 +50,12 @@ uvicorn api.app:app --reload
 # open http://localhost:8000/docs
 ```
 
+```bash
+curl -s localhost:8000/health
+curl -s -X POST localhost:8000/v1/analyze -H "Content-Type: application/json" -d '{"code":"x=1/0"}'
+
+```
+
 Live Demo: https://kv-14.netlify.app
 
 ## License

@@ -6,3 +6,4 @@ document.querySelectorAll(".card").forEach((c,i)=>{
 });
 
 // v14.1.0 minimalist
+// v14.2: LCP <2.5s, no framework

@@ -20,6 +20,8 @@
 </p>
 
 <h3 align="center">The Agentic Swarm Code Intelligence Engine</h3>
+
+<p align="center"><a href="#why-kv-14">Why</a> · <a href="#benchmarks">Benchmarks</a> · <a href="#quick-start">Quick Start</a> · <a href="docs/API.md">API</a> · <a href="docs/ARCHITECTURE.md">Architecture</a> · <a href="#license">License</a></p>
 <p align="center">
   <b>Predict. Plan. Execute. Review. Evolve.</b> — KV-14 is a 14B agentic swarm that upgrades KV-13<br/>
   from single-model inference to a 5-agent collaborative system for real-world codebases.

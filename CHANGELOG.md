@@ -9,3 +9,8 @@
 - Website with playground
 ## [14.1.0] - Minimalist polish
 - Minimalist UI tokens, a11y, error envelope
+## [14.2.0] - 2026-09-12
+- Pro README with TOC, features, benchmarks
+- Batch analyze, metrics, openapi tags
+- Swarm memory TTL, consensus, timeouts
+- Security CWE extended, client retry

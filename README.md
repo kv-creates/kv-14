@@ -81,3 +81,5 @@ MIT
 ![Architecture](assets/architecture.svg)
 
 Live playground: https://kv-14.netlify.app/playground.html
+---
+<p align="center">Built by <a href="https://github.com/kv-creates">kv-creates</a> · MIT · <a href="SECURITY.md">Security</a> · <a href="CHANGELOG.md">Changelog</a></p>

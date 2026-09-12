@@ -14,3 +14,5 @@ class TesterAgent:
     def verify(self, diff: str) -> bool:
         self.memory.log("tester", "Running generated tests: 12 passed, 0 failed")
         return True
+# v14.2: 30s per agent timeout
+AGENT_TIMEOUT_S = 30

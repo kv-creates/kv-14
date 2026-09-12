@@ -70,3 +70,8 @@ MIT
 | Bug predict F1 | 0.91 | 0.78 |
 | Fix pass rate | 87% | 62% |
 | Review agreement | 0.84 | 0.61 |
+## Screenshots
+
+![Architecture](assets/architecture.svg)
+
+Live playground: https://kv-14.netlify.app/playground.html

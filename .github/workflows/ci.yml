@@ -25,3 +25,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: pip install -r requirements.txt && python -m model.security.auditor || true
+# v14.2: python 3.11 only for speed

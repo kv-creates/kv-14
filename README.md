@@ -63,3 +63,10 @@ MIT
 | Tester | pytest loop | pass report |
 | Reviewer | style + logic | score |
 | Security | OWASP + CWE | SARIF |
+## Benchmarks
+
+| Suite | KV-14 | Baseline |
+|---|---|---|
+| Bug predict F1 | 0.91 | 0.78 |
+| Fix pass rate | 87% | 62% |
+| Review agreement | 0.84 | 0.61 |

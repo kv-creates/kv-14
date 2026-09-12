@@ -31,3 +31,5 @@ class KV14Tokenizer:
             if len(context) > max_tokens*4:
                 break
         return context
+# v14.2: truncation='longest_first'
+TRUNCATION = "longest_first"
